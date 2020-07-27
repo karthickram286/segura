@@ -1,0 +1,17 @@
+{
+  "name": "segura",
+  "version": "1.0.0",
+  "description": "A CLI tool which helps in pushing uncommitted code in case of emergencies or distress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Karthick Ram",
+  "license": "MIT",
+  "dependencies": {
+    "simple-git": "^2.15.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.7"
+  }
+}
