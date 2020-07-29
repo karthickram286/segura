@@ -1,5 +1,7 @@
+import segura from './index';
+
 const cli = (args: string[]) => {
-  console.log('CLI works');
+  segura();
 };
 
 export { cli };
