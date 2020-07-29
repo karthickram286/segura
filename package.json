@@ -23,10 +23,13 @@
   "author": "Karthick Ram",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^4.1.0",
     "esm": "^3.2.25",
+    "log-symbols": "^4.0.0",
     "simple-git": "^2.15.0"
   },
   "devDependencies": {
+    "@types/node": "^14.0.27",
     "typescript": "^3.9.7"
   }
 }
