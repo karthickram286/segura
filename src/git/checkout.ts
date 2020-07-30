@@ -8,7 +8,7 @@ import logSymbols from 'log-symbols';
 const checkoutBranch: any = async (branchName: string) => {
   try {
     await git.checkoutLocalBranch(branchName);
-    console.log(chalk.green(`${logSymbols.success} created local branch`));
+    console.log(chalk.green(`${logSymbols.success} creating local branch`));
     return true;
   } catch (error) {
     console.log(chalk.redBright(`${logSymbols.warning} branch already exists`));

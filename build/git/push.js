@@ -6,15 +6,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const git_1 = __importDefault(require("./git"));
 const chalk_1 = __importDefault(require("chalk"));
 const log_symbols_1 = __importDefault(require("log-symbols"));
-const getCurrentBranch = async () => {
+/**
+ * Pushes the changes to remote repository with the same branch
+ */
+const push = async (branchName) => {
     try {
-        let status = await git_1.default.status([]);
-        console.log(chalk_1.default.blueBright(`${log_symbols_1.default.info} current branch name: ${status.current}`));
-        return status.current;
+        await git_1.default.push('origin', branchName);
+        console.log(chalk_1.default.green(`${log_symbols_1.default.success} pushed to branch ${branchName}`));
     }
     catch (error) {
-        console.log(chalk_1.default.redBright(`${log_symbols_1.default.error} can't retrive the current branch name`));
+        console.log(chalk_1.default.redBright(`${log_symbols_1.default.error} can't push the changes`));
         process.exit(1);
     }
 };
-exports.default = getCurrentBranch;
+exports.default = push;

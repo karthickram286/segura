@@ -12,7 +12,7 @@ const log_symbols_1 = __importDefault(require("log-symbols"));
 const checkoutBranch = async (branchName) => {
     try {
         await git_1.default.checkoutLocalBranch(branchName);
-        console.log(chalk_1.default.green(`${log_symbols_1.default.success} created local branch`));
+        console.log(chalk_1.default.green(`${log_symbols_1.default.success} creating local branch`));
         return true;
     }
     catch (error) {

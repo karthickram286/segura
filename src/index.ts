@@ -1,21 +1,34 @@
 import checkout from './git/checkout';
 import deleteBranch from './git/deleteBranch';
 import currentBranch from './git/currentBranch';
+import switchBack from './git/switchback';
+import commit from './git/commit';
+import push from './git/push';
 
 const branchName = 'segura-branch';
 
 const segura = async () => {
 
-  const currentBranchName = await currentBranch();
-
-  // If branch already exists deleting the local branch
-  await deleteBranch(branchName);
+  const currentBranchName: string = await currentBranch();
 
   // Creating a local branch
   let checkoutResult: boolean = await checkout(branchName);
+  
+  if (!checkoutResult) {
+    // If branch already exists deleting the local branch 
+    // and then creating the branch
+    await deleteBranch(branchName);
+    await checkout(branchName);
+  }
+
+  // commiting all the changes
+  await commit();
+
+  // pushing to remote repo
+  await push(branchName);
 
   // switching back to the branch
-  // await checkout(currentBranchName);
+  await switchBack(currentBranchName);
 };
 
 export default segura;
