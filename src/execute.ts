@@ -7,6 +7,7 @@ import commitChanges from './git/commit';
 import addFiles from './git/addFiles';
 import checkBranch from './git/checkBranch';
 import push from './git/push';
+import switchBack from './git/switchback';
 
 const branchName: string = 'segura-branch';
 let currentBranchName: string;
@@ -55,6 +56,12 @@ const tasks = new Listr (
       title: 'Pushing changes to remote branch',
       task: async (): Promise<any> => {
         await push(branchName);
+      }
+    },
+    {
+      title: 'Switching back to original branch',
+      task: async (): Promise<any> => {
+        await switchBack(currentBranch);
       }
     }
   ],

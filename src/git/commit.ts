@@ -9,10 +9,10 @@ const commitChanges = async () => {
   try {
     await git.commit('commit from segura');
     console.log(chalk.green(
-      `${logSymbols.success} changes committed`
+      // `${logSymbols.success} changes committed`
     ));
   } catch (error) {
-    console.log(chalk.redBright(`${logSymbols.error} can't commit the changes`));
+    // console.log(chalk.redBright(`${logSymbols.error} can't commit the changes`));
     process.exit(1);
   }
 };
