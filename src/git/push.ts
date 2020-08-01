@@ -8,9 +8,9 @@ import logSymbols from 'log-symbols';
 const push = async (branchName: string) => {
   try {
     await git.push('origin', branchName);
-    console.log(chalk.green(`${logSymbols.success} pushed to branch ${branchName}`));
+    // console.log(chalk.green(`${logSymbols.success} pushed to branch ${branchName}`));
   } catch (error) {
-    console.log(chalk.redBright(`${logSymbols.error} can't push the changes`));
+    // console.log(chalk.redBright(`${logSymbols.error} can't push the changes`));
     process.exit(1);
   }
 };
