@@ -61,9 +61,9 @@ const tasks = new Listr (
     {
       title: 'Switching back to original branch',
       task: async (): Promise<any> => {
-        await switchBack(currentBranch);
+        await switchBack(currentBranchName);
       },
-      enabled: () => false
+      enabled: () => true
     }
   ],
   {
