@@ -4,10 +4,10 @@ import logSymbols from 'log-symbols';
 
 const deleteBranch = async (branchName: string) => {
   try {
-    await git.deleteLocalBranch(branchName);
-    console.log(chalk.redBright(`${logSymbols.warning} deleting the local branch`));
+    await git.deleteLocalBranch(branchName, true);
+    // console.log(chalk.redBright(`${logSymbols.warning} deleting the local branch`));
   } catch (error) {
-    console.log(chalk.greenBright(`${logSymbols.success} local branch doesn't exist`));
+    // console.log(chalk.greenBright(`${logSymbols.success} local branch doesn't exist`));
   }
 };
 
