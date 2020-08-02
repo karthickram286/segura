@@ -14,7 +14,9 @@
     "access": "public"
   },
   "scripts": {
-    "build": "npx tsc"
+    "build": "tsc",
+    "prepare": "npm run build",
+    "postversion": "git push"
   },
   "keywords": [
     "cli",
