@@ -29,7 +29,7 @@ const tasks = new Listr (
     },
     {
       title: 'Branch already exists, deleting local branch',
-      task: async () => {
+      task: async (): Promise<any> => {
         await deleteBranch(branchName);
       },
       enabled: () => isBranchExists
@@ -61,7 +61,11 @@ const tasks = new Listr (
     {
       title: 'Switching back to original branch',
       task: async (): Promise<any> => {
-        await switchBack(currentBranchName);
+        try {
+          await switchBack(currentBranchName);
+        } catch (error) {
+          console.log(`Changes pushed to remote branch. Not able to switch back to original branch: ${currentBranchName}`);
+        }
       },
       enabled: () => true
     }
@@ -75,7 +79,7 @@ const execute = async () => {
   try {
     await tasks.run();
   } catch (error) {
-    // console.log(`Process stopped`);
+    console.log(`\nProcess failed`);
   }
 };
 
