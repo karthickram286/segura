@@ -1,11 +1,8 @@
 import git from './git';
-import chalk from 'chalk';
-import logSymbols from 'log-symbols';
 import { BranchSummary } from 'simple-git';
-import { randomFill } from 'crypto';
 
 /**
- * Switched back to the original branch
+ * Checks whether 'segura-branch' exists in local
  */
 const checkBranch: any = async (seguraBranch: string) => {
   try {
@@ -16,9 +13,8 @@ const checkBranch: any = async (seguraBranch: string) => {
       }
     }
     return false;
-    // console.log(chalk.green(`${logSymbols.success} switched back to ${currentBranch}`));
   } catch (error) {
-    // console.log(chalk.redBright(`${logSymbols.warning} can't switch back to ${currentBranch}`));
+    throw new Error(`can't check whether ${seguraBranch} exists in local`);
   }
 };
 

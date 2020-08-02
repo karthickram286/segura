@@ -8,9 +8,8 @@ import logSymbols from 'log-symbols';
 const switchBack = async (currentBranch: string) => {
   try {
     await git.checkout(currentBranch);
-    console.log(chalk.green(`${logSymbols.success} switched back to ${currentBranch}`));
   } catch (error) {
-    console.log(chalk.redBright(`${logSymbols.warning} can't switch back to ${currentBranch}`));
+    throw new Error(`Not able to switch back to original branch`);
   }
 };
 
