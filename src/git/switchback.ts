@@ -1,9 +1,7 @@
 import git from './git';
-import chalk from 'chalk';
-import logSymbols from 'log-symbols';
 
 /**
- * Switched back to the original branch
+ * Switches back to the original branch
  */
 const switchBack = async (currentBranch: string) => {
   try {

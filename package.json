@@ -1,10 +1,13 @@
 {
-  "name": "@karthickram/segura",
+  "name": "segura",
   "version": "1.0.0",
   "description": "A CLI tool which helps in pushing uncommitted code in case of emergencies or distress",
   "main": "build/cli.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karthickram286/segura"
+  },
   "bin": {
-    "@karthickram/segura": "bin/segura",
     "segura": "bin/segura"
   },
   "publishConfig": {
@@ -18,17 +21,15 @@
     "segura",
     "emergency",
     "git",
-    "safe"
+    "safe",
+    "commit"
   ],
   "author": "Karthick Ram",
   "license": "MIT",
   "dependencies": {
     "@types/listr": "^0.14.2",
-    "chalk": "^4.1.0",
-    "enquirer": "^2.3.6",
     "esm": "^3.2.25",
     "listr": "^0.14.3",
-    "log-symbols": "^4.0.0",
     "simple-git": "^2.15.0"
   },
   "devDependencies": {
