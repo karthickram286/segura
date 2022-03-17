@@ -31,7 +31,7 @@
   "dependencies": {
     "esm": "^3.2.25",
     "listr": "^0.14.3",
-    "simple-git": "^2.15.0"
+    "simple-git": "^3.3.0"
   },
   "devDependencies": {
     "@types/listr": "^0.14.2",
